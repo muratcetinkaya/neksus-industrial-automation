@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Video Test - Neksus</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 20px;
+            background: #f0f0f0;
+            font-family: Arial, sans-serif;
+        }
+        .test-container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        .video-container {
+            width: 100%;
+            height: 400px;
+            background: #000;
+            border-radius: 8px;
+            overflow: hidden;
+            margin: 20px 0;
+            position: relative;
+        }
+        .video-container video {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        .controls {
+            margin: 10px 0;
+        }
+        button {
+            background: #ff6b35;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            margin: 0 5px;
+        }
+        button:hover {
+            background: #e55a2b;
+        }
+        .info {
+            background: #e9f5ff;
+            padding: 15px;
+            border-radius: 5px;
+            margin: 10px 0;
+        }
+        .status {
+            padding: 10px;
+            margin: 10px 0;
+            border-radius: 5px;
+        }
+        .status.success { background: #d4edda; color: #155724; }
+        .status.warning { background: #fff3cd; color: #856404; }
+        .status.error { background: #f8d7da; color: #721c24; }
+    </style>
+</head>
+<body>
+    <div class="test-container">
+        <h1>🎥 Video Test Sayfası</h1>
+        <p>Bu sayfa video dosyanızın çalışıp çalışmadığını test etmek için oluşturulmuştur.</p>
+        
+        <div class="info">
+            <h3>📋 Test Bilgileri:</h3>
+            <ul>
+                <li><strong>Video Dosyası:</strong> video3.mp4</li>
+                <li><strong>Konum:</strong> Aynı klasör</li>
+                <li><strong>Format:</strong> MP4/H.264</li>
+                <li><strong>Autoplay:</strong> Muted ile aktif</li>
+            </ul>
+        </div>
+
+        <div class="video-container">
+            <video id="testVideo" autoplay muted loop playsinline preload="auto" controls>
+                <source src="video3.mp4" type="video/mp4">
+                Video oynatılamıyor. Lütfen video dosyasını kontrol edin.
+            </video>
+        </div>
+
+        <div class="controls">
+            <button onclick="playVideo()">▶️ Oynat</button>
+            <button onclick="pauseVideo()">⏸️ Duraklat</button>
+            <button onclick="reloadVideo()">🔄 Yeniden Yükle</button>
+            <button onclick="checkVideoInfo()">ℹ️ Video Bilgisi</button>
+        </div>
+
+        <div id="status"></div>
+        <div id="videoInfo"></div>
+
+        <div class="info">
+            <h3>🔧 Olası Sorunlar ve Çözümler:</h3>
+            <ol>
+                <li><strong>Video dosyası bulunamıyor:</strong> video3.mp4 dosyasının aynı klasörde olduğundan emin olun</li>
+                <li><strong>Video codec sorunu:</strong> H.264 codec'i ile kodlanmış MP4 kullanın</li>
+                <li><strong>HTTPS gereksinimi:</strong> Canlı sunucuda HTTPS kullanın</li>
+                <li><strong>Autoplay engeli:</strong> Modern tarayıcılar kullanıcı etkileşimi gerektirir</li>
+                <li><strong>Dosya boyutu:</strong> Çok büyük dosyalar yavaş yüklenebilir</li>
+            </ol>
+        </div>
+    </div>
+
+    <script>
+        const video = document.getElementById('testVideo');
+        const statusDiv = document.getElementById('status');
+        const videoInfoDiv = document.getElementById('videoInfo');
+
+        function showStatus(message, type = 'info') {
+            statusDiv.innerHTML = `<div class="status ${type}">${message}</div>`;
+        }
+
+        function playVideo() {
+            const playPromise = video.play();
+            if (playPromise !== undefined) {
+                playPromise.then(() => {
+                    showStatus('✅ Video başarıyla oynatılıyor', 'success');
+                }).catch(error => {
+                    showStatus('❌ Video oynatma hatası: ' + error.message, 'error');
+                });
+            }
+        }
+
+        function pauseVideo() {
+            video.pause();
+            showStatus('⏸️ Video duraklatıldı', 'warning');
+        }
+
+        function reloadVideo() {
+            video.load();
+            showStatus('🔄 Video yeniden yükleniyor...', 'info');
+        }
+
+        function checkVideoInfo() {
+            let info = '<h3>📊 Video Bilgileri:</h3><ul>';
+            info += `<li><strong>Duration:</strong> ${video.duration || 'Bilinmiyor'} saniye</li>`;
+            info += `<li><strong>Video Width:</strong> ${video.videoWidth || 'Bilinmiyor'}px</li>`;
+            info += `<li><strong>Video Height:</strong> ${video.videoHeight || 'Bilinmiyor'}px</li>`;
+            info += `<li><strong>Ready State:</strong> ${video.readyState}</li>`;
+            info += `<li><strong>Network State:</strong> ${video.networkState}</li>`;
+            info += `<li><strong>Paused:</strong> ${video.paused}</li>`;
+            info += `<li><strong>Muted:</strong> ${video.muted}</li>`;
+            info += `<li><strong>Can Play MP4:</strong> ${video.canPlayType('video/mp4')}</li>`;
+            info += '</ul>';
+            videoInfoDiv.innerHTML = info;
+        }
+
+        // Event listeners
+        video.addEventListener('loadstart', () => showStatus('📥 Video yükleme başladı...', 'info'));
+        video.addEventListener('loadeddata', () => showStatus('✅ Video yüklendi', 'success'));
+        video.addEventListener('canplay', () => showStatus('▶️ Video oynatılabilir', 'success'));
+        video.addEventListener('canplaythrough', () => showStatus('🎯 Video tamamen hazır', 'success'));
+        video.addEventListener('error', (e) => showStatus('❌ Video yükleme hatası: ' + (e.message || 'Bilinmeyen hata'), 'error'));
+        video.addEventListener('play', () => showStatus('▶️ Video oynatılıyor', 'success'));
+        video.addEventListener('pause', () => showStatus('⏸️ Video duraklatıldı', 'warning'));
+        video.addEventListener('waiting', () => showStatus('⏳ Video buffering...', 'warning'));
+        video.addEventListener('stalled', () => showStatus('⚠️ Video yükleme durdu', 'warning'));
+
+        // Sayfa yüklendiğinde otomatik kontrol
+        window.addEventListener('load', () => {
+            setTimeout(() => {
+                if (video.readyState >= 3) {
+                    showStatus('✅ Video başarıyla yüklendi ve hazır', 'success');
+                } else {
+                    showStatus('⚠️ Video henüz tam olarak yüklenmedi', 'warning');
+                }
+                checkVideoInfo();
+            }, 2000);
+        });
+    </script>
+</body>
+</html>

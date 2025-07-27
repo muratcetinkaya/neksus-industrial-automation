@@ -1,0 +1,533 @@
+<!DOCTYPE html>
+<!--
+    Developed by: Muratcan Çetinkaya
+    GitHub: github.com/muratcetinkaya
+-->
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- Primary Meta Tags -->
+    <title>Neksus Endüstriyel Otomasyon | Tasarım, İmalat ve Otomasyon Çözümleri</title>
+    <meta name="title" content="Neksus Endüstriyel Otomasyon | Tasarım, İmalat ve Otomasyon Çözümleri">
+    <meta name="description" content="Endüstriyel otomasyon, robotik entegrasyon, PLC sistemleri ve yazılım geliştirme alanında uzman çözümler. Neksus Palletizer ile anahtar teslim paletleme sistemleri. İzmir merkezli profesyonel hizmet.">
+    <meta name="keywords" content="endüstriyel otomasyon, robot programlama, PLC programlama, SCADA, HMI, paletleme sistemi, konveyör kontrol, ABB robot, KUKA, Fanuc, endüstriyel tasarım, CNC işleme, İzmir otomasyon">
+    <meta name="author" content="Neksus Endüstriyel Otomasyon">
+    <meta name="robots" content="index, follow">
+    <meta name="language" content="Turkish">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.neksus.com.tr/">
+    <meta property="og:title" content="Neksus Endüstriyel Otomasyon | Tasarım, İmalat ve Otomasyon Çözümleri">
+    <meta property="og:description" content="Endüstriyel otomasyon, robotik entegrasyon, PLC sistemleri ve yazılım geliştirme alanında uzman çözümler. Neksus Palletizer ile anahtar teslim paletleme sistemleri.">
+    <meta property="og:image" content="https://www.neksus.com.tr/neksus2.png">
+    <meta property="og:site_name" content="Neksus Endüstriyel Otomasyon">
+    <meta property="og:locale" content="tr_TR">
+    
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://www.neksus.com.tr/">
+    <meta property="twitter:title" content="Neksus Endüstriyel Otomasyon | Tasarım, İmalat ve Otomasyon Çözümleri">
+    <meta property="twitter:description" content="Endüstriyel otomasyon, robotik entegrasyon, PLC sistemleri ve yazılım geliştirme alanında uzman çözümler. Neksus Palletizer ile anahtar teslim paletleme sistemleri.">
+    <meta property="twitter:image" content="https://www.neksus.com.tr/neksus2.png">
+    
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://www.neksus.com.tr/">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="neksus_move.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="neksus_move.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="neksus_move.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="neksus_move.png">
+    <link rel="shortcut icon" href="neksus_move.png">
+    
+    <!-- Geo Tags -->
+    <meta name="geo.region" content="TR-35">
+    <meta name="geo.placename" content="İzmir, Türkiye">
+    <meta name="geo.position" content="38.4237;27.1428">
+    <meta name="ICBM" content="38.4237, 27.1428">
+    
+    <!-- Business Information -->
+    <meta name="contact" content="info@neksus.com.tr">
+    <meta name="telephone" content="+90 506 614 97 69">
+    <meta name="address" content="29 Ekim Mah. 10001 Sok. No:68/N, Ulukent-Menemen, İzmir">
+    
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Emergency CSS - CSS dosyası yüklenmezse bu devreye girer -->
+    <style>
+        body { 
+            margin: 0; 
+            padding: 0; 
+            font-family: 'Inter', sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%) !important; 
+            min-height: 100vh;
+        }
+        .hero { 
+            min-height: 100vh; 
+            display: flex; 
+            align-items: center; 
+            position: relative;
+        }
+        .hero-background { 
+            position: absolute; 
+            top: 0; 
+            left: 0; 
+            width: 100%; 
+            height: 100%; 
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            opacity: 0.95;
+        }
+        .hero-content { position: relative; z-index: 2; }
+        .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
+        .header { position: fixed; top: 0; width: 100%; z-index: 1000; background: rgba(255,255,255,0.95); backdrop-filter: blur(10px); }
+        .navbar { padding: 1rem 0; }
+    </style>
+    
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        "name": "Neksus Endüstriyel Otomasyon",
+        "url": "https://www.neksus.com.tr",
+        "logo": "https://www.neksus.com.tr/neksus2.png",
+        "description": "Endüstriyel otomasyon, robot programlama, PLC sistemleri ve yazılım geliştirme alanında uzman çözümler sunan firma.",
+        "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "29 Ekim Mah. 10001 Sok. No:68/N, Naciye Şeker Toplu İşyeri Sanayi Sitesi",
+            "addressLocality": "Ulukent-Menemen",
+            "addressRegion": "İzmir",
+            "addressCountry": "TR"
+        },
+        "contactPoint": {
+            "@type": "ContactPoint",
+            "telephone": "+90 506 614 97 69",
+            "contactType": "customer service",
+            "email": "info@neksus.com.tr",
+            "availableLanguage": "Turkish"
+        },
+        "sameAs": [
+            "https://www.neksus.com.tr"
+        ],
+        "areaServed": "TR",
+        "serviceType": [
+            "Endüstriyel Otomasyon",
+            "Robot Programlama",
+            "PLC Programlama",
+            "SCADA Sistemleri",
+            "Yazılım Geliştirme",
+            "Endüstriyel Tasarım"
+        ]
+    }
+    </script>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <nav class="navbar">
+            <div class="container">
+                <div class="nav-brand">
+                    <img src="neksus2.png" alt="Neksus Logo" class="logo">
+                    <!--<span class="brand-text">neksus.com.tr</span>-->
+                </div>
+                <ul class="nav-menu">
+                    <li><a href="#home" class="nav-link" data-tr="Ana Sayfa" data-en="Home">Ana Sayfa</a></li>
+                    <li><a href="#about" class="nav-link" data-tr="Hakkımızda" data-en="About">Hakkımızda</a></li>
+                    <li><a href="#services" class="nav-link" data-tr="Hizmetlerimiz" data-en="Services">Hizmetlerimiz</a></li>
+                    <li><a href="#products" class="nav-link" data-tr="Paket Ürünlerimiz" data-en="Products">Paket Ürünlerimiz</a></li>
+                    <li><a href="#references" class="nav-link" data-tr="Referanslarımız" data-en="References">Referanslarımız</a></li>
+                    <li><a href="#contact" class="nav-link" data-tr="İletişim" data-en="Contact">İletişim</a></li>
+                </ul>
+                <div class="language-switcher">
+                    <button class="lang-btn active" onclick="changeLanguage('tr')" data-lang="tr">TR</button>
+                    <button class="lang-btn" onclick="changeLanguage('en')" data-lang="en">EN</button>
+                </div>
+                <div class="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-background">
+            <div class="hero-background-overlay"></div>
+        </div>
+        <div class="hero-content">
+            <div class="container">
+                <div class="hero-text">
+                    <h1 data-tr="Anahtar Teslim Endüstriyel Çözümler" data-en="Turnkey Industrial Solutions">Anahtar Teslim Endüstriyel Çözümler</h1>
+                    <p data-tr="Otomasyon, robotik ve üretim teknolojilerinde anahtar teslim projelerle işletmenize değer katıyoruz." data-en="We add value to your business with turnkey projects in automation, robotics and production technologies.">Otomasyon, robotik ve üretim teknolojilerinde anahtar teslim projelerle işletmenize değer katıyoruz.</p>
+                    <div class="hero-buttons">
+                        <a href="#services" class="btn btn-primary" data-tr="Hizmetlerimizi Keşfedin" data-en="Discover Our Services">Hizmetlerimizi Keşfedin</a>
+                        <a href="#products" class="btn btn-secondary" data-tr="Paket Ürünlerimizi İnceleyin" data-en="Explore Our Products">Paket Ürünlerimizi İnceleyin</a>
+                        <a href="#contact" class="btn btn-outline" data-tr="İletişime Geçin" data-en="Contact Us">İletişime Geçin</a>
+                    </div>
+                </div>
+                <div class="hero-visual">
+                    <div class="hero-logo">
+                        <img src="neksus_move.png" alt="Neksus Logo">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about" itemscope itemtype="https://schema.org/AboutPage">
+        <div class="container">
+            <div class="section-header">
+                <h2 data-tr="Hakkımızda" data-en="About Us">Hakkımızda</h2>
+                <p data-tr="Endüstriyel otomasyon alanında yenilikçi çözümler üreten deneyimli ekibimizle tanışın" data-en="Meet our experienced team that produces innovative solutions in the field of industrial automation">Endüstriyel otomasyon alanında yenilikçi çözümler üreten deneyimli ekibimizle tanışın</p>
+            </div>
+            <div class="about-content">
+                <div class="about-text">
+                    <h3 data-tr="Uzman Kadromuzla Güvenilir Çözümler" data-en="Reliable Solutions with Our Expert Team">Uzman Kadromuzla Güvenilir Çözümler</h3>
+                    <p itemprop="description" data-tr="Endüstriyel otomasyon, robot programlama, endüstriyel tasarım ve imalat alanlarında faaliyet gösteren firmamız, müşterilerimizin üretim süreçlerini iyileştirmek ve verimliliklerini artırmak amacıyla modern teknolojiler ve kanıtlanmış yöntemler kullanarak hizmet vermektedir." data-en="Our company, operating in the fields of industrial automation, robot programming, industrial design and manufacturing, provides services using modern technologies and proven methods to improve our customers' production processes and increase their efficiency.">Endüstriyel otomasyon, robot programlama, endüstriyel tasarım ve imalat alanlarında faaliyet gösteren firmamız, müşterilerimizin üretim süreçlerini iyileştirmek ve verimliliklerini artırmak amacıyla modern teknolojiler ve kanıtlanmış yöntemler kullanarak hizmet vermektedir.</p>
+                    
+                    <div class="features">
+                        <div class="feature">
+                            <i class="fas fa-robot"></i>
+                            <h4 data-tr="Robotik Otomasyon" data-en="Robotic Automation">Robotik Otomasyon</h4>
+                            <p data-tr="İleri seviye offline/online programlama ve simülasyon, proses optimizasyonu, hareket planlama" data-en="Advanced offline/online programming and simulation, process optimization, motion planning">
+                                İleri seviye offline/online programlama ve simülasyon, proses optimizasyonu, hareket planlama
+                            </p>
+                        </div>
+                        <div class="feature">
+                            <i class="fas fa-cogs"></i>
+                            <h4 data-tr="Otomasyon Sistemleri" data-en="Automation Systems">Otomasyon Sistemleri</h4>
+                            <p data-tr="Akıllı otomasyon çözümleri ve süreç optimizasyonu" data-en="Smart automation solutions and process optimization">Akıllı otomasyon çözümleri ve süreç optimizasyonu</p>
+                        </div>
+                        <div class="feature">
+                            <i class="fas fa-drafting-compass"></i>
+                            <h4 data-tr="Endüstriyel Tasarım" data-en="Industrial Design">Endüstriyel Tasarım</h4>
+                            <p data-tr="İleri teknoloji tasarım ve mühendislik hizmetleri" data-en="Advanced technology design and engineering services">İleri teknoloji tasarım ve mühendislik hizmetleri</p>
+                        </div>
+                        <div class="feature">
+                            <i class="fas fa-industry"></i>
+                            <h4 data-tr="İmalat Çözümleri" data-en="Manufacturing Solutions">İmalat Çözümleri</h4>
+                            <p data-tr="Özel imalat ve üretim süreç danışmanlığı" data-en="Custom manufacturing and production process consulting">Özel imalat ve üretim süreç danışmanlığı</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="services" itemscope itemtype="https://schema.org/Service">
+        <div class="container">
+            <div class="section-header">
+                <h2 data-tr="Hizmetlerimiz" data-en="Our Services">Hizmetlerimiz</h2>
+                <p data-tr="Endüstriyel ihtiyaçlarınız için kapsamlı çözümler sunuyoruz" data-en="We offer comprehensive solutions for your industrial needs">Endüstriyel ihtiyaçlarınız için kapsamlı çözümler sunuyoruz</p>
+            </div>
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-robot"></i>
+                    </div>
+                    <h3 data-tr="Robotik Sistem Entegrasyonu" data-en="Robotic System Integration">Robotik Sistem Entegrasyonu</h3>
+                    <p data-tr="Endüstriyel robotların programlanması, konfigürasyonu ve entegrasyonu. ABB, KUKA, Fanuc ve diğer robot markalarında uzman kadromuzla hizmet veriyoruz. Akan hat takip sistemleri, konveyör entegrasyonu ve vision sistemleri ile dinamik çözümler sunuyoruz." data-en="Programming, configuration and integration of industrial robots. We provide services with our expert team in ABB, KUKA, Fanuc and other robot brands. We offer dynamic solutions with line tracking systems, conveyor integration and vision systems.">Endüstriyel robotların programlanması, konfigürasyonu ve entegrasyonu. ABB, KUKA, Fanuc ve diğer robot markalarında uzman kadromuzla hizmet veriyoruz. Akan hat takip sistemleri, konveyör entegrasyonu ve vision sistemleri ile dinamik çözümler sunuyoruz.</p>
+                    <ul>
+                        <li data-tr="Robot Programlama ve Konfigürasyon" data-en="Robot Programming and Configuration">Robot Programlama ve Konfigürasyon</li>
+                        <li data-tr="Akan Hat Takip Sistemleri (Line Tracking)" data-en="Conveyor Line Tracking Systems">Akan Hat Takip Sistemleri (Line Tracking)</li>
+                        <li data-tr="Vision Sistemleri" data-en="Vision Systems">Vision Sistemleri</li>
+                        <li data-tr="Sistem Entegrasyonu" data-en="System Integration">Sistem Entegrasyonu</li>
+                        <li data-tr="Bakım ve Destek Hizmetleri" data-en="Maintenance and Support Services">Bakım ve Destek Hizmetleri</li>
+                        <li data-tr="Eğitim ve Danışmanlık" data-en="Training and Consulting">Eğitim ve Danışmanlık</li>
+                    </ul>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-microchip"></i>
+                    </div>
+                    <h3 data-tr="Endüstriyel Otomasyon" data-en="Industrial Automation">Endüstriyel Otomasyon</h3>
+                    <p data-tr="PLC programlama, SCADA sistemleri, HMI tasarımı ve endüstriyel kontrol sistemleri ile üretim süreçlerinizi optimize ediyoruz. Servo motion kontrol uygulamaları ve hassas pozisyonlama sistemleri ile yüksek performans sağlıyoruz." data-en="We optimize your production processes with PLC programming, SCADA systems, HMI design and industrial control systems. We provide high performance with servo motion control applications and precision positioning systems.">PLC programlama, SCADA sistemleri, HMI tasarımı ve endüstriyel kontrol sistemleri ile üretim süreçlerinizi optimize ediyoruz. Servo motion kontrol uygulamaları ve hassas pozisyonlama sistemleri ile yüksek performans sağlıyoruz.</p>
+                    <ul>
+                        <li data-tr="PLC Programlama" data-en="PLC Programming">PLC Programlama</li>
+                        <li data-tr="SCADA ve HMI Sistemleri" data-en="SCADA and HMI Systems">SCADA ve HMI Sistemleri</li>
+                        <li data-tr="Servo Motion Kontrol Sistemleri" data-en="Servo Motion Control Systems">Servo Motion Kontrol Sistemleri</li>
+                        <li data-tr="Hassas Pozisyonlama Uygulamaları" data-en="Precision Positioning Applications">Hassas Pozisyonlama Uygulamaları</li>
+                        <li data-tr="Endüstriyel Haberleşme Ağları" data-en="Industrial Communication Networks">Endüstriyel Haberleşme Ağları</li>
+                        <li data-tr="Süreç Kontrolü ve Optimizasyon" data-en="Process Control and Optimization">Süreç Kontrolü ve Optimizasyon</li>
+                    </ul>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-laptop-code"></i>
+                    </div>
+                    <h3 data-tr="Yazılım Geliştirme" data-en="Software Development">Yazılım Geliştirme</h3>
+                    <p data-tr="Robot uyumlu ve PLC entegreli özel yazılım çözümleri ile üretim süreçlerinizi dijitalleştiriyoruz." data-en="We digitalize your production processes with robot-compatible and PLC-integrated custom software solutions.">Robot uyumlu ve PLC entegreli özel yazılım çözümleri ile üretim süreçlerinizi dijitalleştiriyoruz.</p>
+                    <ul>
+                        <li data-tr="Robot Uyumlu Yazılım Geliştirme" data-en="Robot Compatible Software Development">Robot Uyumlu Yazılım Geliştirme</li>
+                        <li data-tr="PLC Entegreli Üretim Takip Sistemleri" data-en="PLC Integrated Production Tracking Systems">PLC Entegreli Üretim Takip Sistemleri</li>
+                        <li data-tr="Endüstriyel IoT Uygulamaları" data-en="Industrial IoT Applications">Endüstriyel IoT Uygulamaları</li>
+                        <li data-tr="Özel Otomasyon Yazılımları" data-en="Custom Automation Software">Özel Otomasyon Yazılımları</li>
+                    </ul>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-bolt"></i>
+                    </div>
+                    <h3 data-tr="Elektrik Pano Tasarım ve İmalat" data-en="Electrical Panel Design and Manufacturing">Elektrik Pano Tasarım ve İmalat</h3>
+                    <p data-tr="Endüstriyel elektrik panolarının tasarımı, imalatı ve revize geliştirme hizmetleri. Mevcut sistemlerin modernizasyonu ve kapasite artırım projeleri." data-en="Design, manufacturing and revision development services for industrial electrical panels. Modernization of existing systems and capacity expansion projects.">Endüstriyel elektrik panolarının tasarımı, imalatı ve revize geliştirme hizmetleri. Mevcut sistemlerin modernizasyonu ve kapasite artırım projeleri.</p>
+                    <ul>
+                        <li data-tr="Elektrik Pano Tasarımı ve İmalatı" data-en="Electrical Panel Design and Manufacturing">Elektrik Pano Tasarımı ve İmalatı</li>
+                        <li data-tr="Mevcut Panoların Revize Edilmesi" data-en="Revision of Existing Panels">Mevcut Panoların Revize Edilmesi</li>
+                        <li data-tr="Kapasite Artırım ve Modernizasyon" data-en="Capacity Expansion and Modernization">Kapasite Artırım ve Modernizasyon</li>
+                        <li data-tr="Pano Saha Entegrasyonu" data-en="Panel Field Integration">Pano Saha Entegrasyonu</li>
+                    </ul>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-drafting-compass"></i>
+                    </div>
+                    <h3 data-tr="Endüstriyel Tasarım" data-en="Industrial Design">Endüstriyel Tasarım</h3>
+                    <p data-tr="CAD/CAM tasarım, Özel Makine Tasarımı, prototipleme ve ürün geliştirme süreçlerinde profesyonel destek sağlıyoruz." data-en="We provide professional support in CAD/CAM design, Custom Machine Design, prototyping and product development processes.">CAD/CAM tasarım, Özel Makine Tasarımı, prototipleme ve ürün geliştirme süreçlerinde profesyonel destek sağlıyoruz.</p>
+                    <ul>
+                        <li data-tr="CAD/CAM Tasarım ve Modelleme" data-en="CAD/CAM Design and Modeling">CAD/CAM Tasarım ve Modelleme</li>
+                        <li data-tr="Özel Makine Ar-Ge ve Tasarım" data-en="Custom Machine R&D and Design">Özel Makine Ar-Ge ve Tasarım</li>
+                        <li data-tr="Ürün Geliştirme ve Optimizasyon" data-en="Product Development and Optimization">Ürün Geliştirme ve Optimizasyon</li>
+                        <li data-tr="Teknik Dokümantasyon" data-en="Technical Documentation">Teknik Dokümantasyon</li>
+                    </ul>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-industry"></i>
+                    </div>
+                    <h3 data-tr="İmalat ve Üretim" data-en="Manufacturing and Production">İmalat ve Üretim</h3>
+                    <p data-tr="CNC işleme, hassas imalat, kalite kontrol ve üretim süreç danışmanlığı ile üretim kapasitеnizi artırıyoruz." data-en="We increase your production capacity with CNC machining, precision manufacturing, quality control and production process consulting.">CNC işleme, hassas imalat, kalite kontrol ve üretim süreç danışmanlığı ile üretim kapasitеnizi artırıyoruz.</p>
+                    <ul>
+                        <li data-tr="CNC İşleme ve Hassas İmalat" data-en="CNC Machining and Precision Manufacturing">CNC İşleme ve Hassas İmalat</li>
+                        <li data-tr="Kalite Kontrol Sistemleri" data-en="Quality Control Systems">Kalite Kontrol Sistemleri</li>
+                        <li data-tr="Üretim Süreç Optimizasyonu" data-en="Production Process Optimization">Üretim Süreç Optimizasyonu</li>
+                        <li data-tr="Lean Manufacturing Danışmanlığı" data-en="Lean Manufacturing Consulting">Lean Manufacturing Danışmanlığı</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Products Section -->
+    <section id="products" class="products" itemscope itemtype="https://schema.org/Product">
+        <div class="container">
+            <div class="section-header">
+                <h2 data-tr="Paket Ürünlerimiz" data-en="Our Products">Paket Ürünlerimiz</h2>
+                <p data-tr="Endüstriyel otomasyon alanında geliştirdiğimiz hazır çözümler ve standart ürünler" data-en="Ready solutions and standard products we have developed in the field of industrial automation">Endüstriyel otomasyon alanında geliştirdiğimiz hazır çözümler ve standart ürünler</p>
+                <div class="products-navigation">
+                    <button class="nav-btn nav-prev" onclick="scrollProducts(-1)">
+                        <i class="fas fa-chevron-left"></i>
+                    </button>
+                    <button class="nav-btn nav-next" onclick="scrollProducts(1)">
+                        <i class="fas fa-chevron-right"></i>
+                    </button>
+                </div>
+            </div>
+            <div class="products-grid">
+                <div class="product-card featured active">
+                    <div class="product-image">
+                        <div class="product-icon">
+                            <i class="fas fa-boxes"></i>
+                        </div>
+                    </div>
+                    <div class="product-content">
+                        <h3 data-tr="Neksus Palletizer" data-en="Neksus Palletizer">Neksus Palletizer</h3>
+                        <p class="product-subtitle" data-tr="Dinamik Paletleme Yazılımı" data-en="Dynamic Palletizing Software">Dinamik Paletleme Yazılımı</p>
+                        <p data-tr="Endüstriyel üretim hatlarında kuruluma hazır otomatik paletleme yazılımı. Farklı palet dizilimleri ve reçeteler için robot programcısına ihtiyaç duymadan hızlı programlama imkanı sunar. Standart konfigürasyonlarla hızlı devreye alma ve yüksek performans garantisi veren anahtar teslim paket çözüm." data-en="Ready-to-install automatic palletizing software for industrial production lines. Offers fast programming without the need for robot programmers for different pallet arrangements and recipes. Turnkey package solution that provides fast commissioning and high performance guarantee with standard configurations.">Endüstriyel üretim hatlarında kuruluma hazır otomatik paletleme yazılımı. Farklı palet dizilimleri ve reçeteler için robot programcısına ihtiyaç duymadan hızlı programlama imkanı sunar. Standart konfigürasyonlarla hızlı devreye alma ve yüksek performans garantisi veren anahtar teslim paket çözüm.</p>
+                        
+                        <div class="product-features">
+                            <h4 data-tr="Öne Çıkan Özellikler:" data-en="Key Features:">Öne Çıkan Özellikler:</h4>
+                            <ul>
+                                <li><i class="fas fa-check"></i> <span data-tr="Robot programcısına ihtiyaç duymadan hızlı programlama" data-en="Fast programming without the need for robot programmers">Robot programcısına ihtiyaç duymadan hızlı programlama</span></li>
+                                <li><i class="fas fa-check"></i> <span data-tr="Çoklu palet dizilimi ve reçete desteği" data-en="Multiple pallet layout and recipe support">Çoklu palet dizilimi ve reçete desteği</span></li>
+                                <li><i class="fas fa-check"></i> <span data-tr="Standart konfigürasyonlarla hızlı kurulum" data-en="Fast setup with standard configurations">Standart konfigürasyonlarla hızlı kurulum</span></li>
+                                <li><i class="fas fa-check"></i> <span data-tr="Kullanıcı dostu grafik arayüz" data-en="User-friendly graphical interface">Kullanıcı dostu grafik arayüz</span></li>
+                                <li><i class="fas fa-check"></i> <span data-tr="Minimum bakım gereksinimi" data-en="Minimum maintenance requirement">Minimum bakım gereksinimi</span></li>
+                            </ul>
+                        </div>
+
+                        <div class="product-actions">
+                            <button class="btn btn-primary" onclick="openPalletizerPDF()">
+                                <i class="fas fa-file-pdf"></i> <span data-tr="Teknik Döküman" data-en="Technical Document">Teknik Döküman</span>
+                            </button>
+                            <a href="#contact" class="btn btn-secondary" data-tr="İletişime Geç" data-en="Contact Us">İletişime Geç</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- İkinci Ürün - Dummy -->
+                <div class="product-card featured">
+                    <div class="product-image">
+                        <div class="product-icon">
+                            <i class="fas fa-cogs"></i>
+                        </div>
+                    </div>
+                    <div class="product-content">
+                        <h3 data-tr="Neksus Conveyor Manager" data-en="Neksus Conveyor Manager">Neksus Conveyor Manager</h3>
+                        <p class="product-subtitle" data-tr="Akıllı Konveyör Kontrol Sistemi" data-en="Smart Conveyor Control System">Akıllı Konveyör Kontrol Sistemi</p>
+                        <p data-tr="Endüstriyel konveyör hatlarının merkezi kontrolü için geliştirilmiş paket yazılım çözümü. Hız kontrolü, yönlendirme ve trafik yönetimi için önceden yapılandırılmış sistem." data-en="Package software solution developed for central control of industrial conveyor lines. Pre-configured system for speed control, routing and traffic management.">Endüstriyel konveyör hatlarının merkezi kontrolü için geliştirilmiş paket yazılım çözümü. Hız kontrolü, yönlendirme ve trafik yönetimi için önceden yapılandırılmış sistem.</p>
+                        
+                        <div class="product-features">
+                            <h4 data-tr="Öne Çıkan Özellikler:" data-en="Key Features:">Öne Çıkan Özellikler:</h4>
+                            <ul>
+                                <li><i class="fas fa-check"></i> <span data-tr="Çoklu konveyör hattı kontrolü" data-en="Multiple conveyor line control">Çoklu konveyör hattı kontrolü</span></li>
+                                <li><i class="fas fa-check"></i> <span data-tr="Otomatik hız optimizasyonu" data-en="Automatic speed optimization">Otomatik hız optimizasyonu</span></li>
+                                <li><i class="fas fa-check"></i> <span data-tr="Trafik yönetimi ve yönlendirme" data-en="Traffic management and routing">Trafik yönetimi ve yönlendirme</span></li>
+                                <li><i class="fas fa-check"></i> <span data-tr="Gerçek zamanlı izleme paneli" data-en="Real-time monitoring panel">Gerçek zamanlı izleme paneli</span></li>
+                                <li><i class="fas fa-check"></i> <span data-tr="Plug-and-play kurulum" data-en="Plug-and-play installation">Plug-and-play kurulum</span></li>
+                            </ul>
+                        </div>
+
+                        <div class="product-actions">
+                            <button class="btn btn-primary" onclick="openConveyorPDF()">
+                                <i class="fas fa-file-pdf"></i> <span data-tr="Teknik Döküman" data-en="Technical Document">Teknik Döküman</span>
+                            </button>
+                            <a href="#contact" class="btn btn-secondary" data-tr="İletişime Geç" data-en="Contact Us">İletişime Geç</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- References Section -->
+    <section id="references" class="references">
+        <div class="container">
+            <div class="section-header">
+                <h2 data-tr="Referanslarımız ve Çözüm Ortaklarımız" data-en="Our References and Solution Partners">Referanslarımız ve Çözüm Ortaklarımız</h2>
+                <p data-tr="Güvenilir çözümlerimizle birlikte çalıştığımız değerli müşterilerimiz ve çözüm ortaklarımız" data-en="Our valued customers and solution partners we work with through our reliable solutions">Güvenilir çözümlerimizle birlikte çalıştığımız değerli müşterilerimiz ve çözüm ortaklarımız</p>
+            </div>
+            <div class="references-slider">
+                <div class="references-track" id="referencesTrack">
+                    <!-- Referans logoları buraya eklenecek -->
+                    <div class="reference-placeholder">
+                        <i class="fas fa-building"></i>
+                        <p data-tr="Referans logoları buraya eklenecek" data-en="Reference logos will be added here">Referans logoları buraya eklenecek</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact" itemscope itemtype="https://schema.org/ContactPage">
+        <div class="container">
+            <div class="section-header">
+                <h2 data-tr="İletişim" data-en="Contact">İletişim</h2>
+                <p data-tr="Projeleriniz için bizimle iletişime geçin" data-en="Contact us for your projects">Projeleriniz için bizimle iletişime geçin</p>
+            </div>
+            <div class="contact-content">
+                <div class="contact-info" itemscope itemtype="https://schema.org/Organization">
+                    <div class="contact-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <div>
+                            <h4 data-tr="Adres" data-en="Address">Adres</h4>
+                            <p itemprop="address" itemscope itemtype="https://schema.org/PostalAddress">
+                                <span itemprop="streetAddress">29 Ekim Mah. 10001 Sok. No:68/N<br>
+                                Naciye Şeker Toplu İşyeri Sanayi Sitesi</span><br>
+                                <span itemprop="addressLocality">Ulukent-Menemen</span> / <span itemprop="addressRegion">İZMİR</span>
+                            </p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-phone"></i>
+                        <div>
+                            <h4 data-tr="Telefon" data-en="Phone">Telefon</h4>
+                            <p itemprop="telephone">+90 506 614 97 69</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-envelope"></i>
+                        <div>
+                            <h4 data-tr="E-posta" data-en="Email">E-posta</h4>
+                            <p itemprop="email">info@neksus.com.tr</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="contact-form">
+                    <form id="contactForm">
+                        <div class="form-group">
+                            <input type="text" name="name" data-placeholder-tr="Ad Soyad" data-placeholder-en="Full Name" placeholder="Ad Soyad" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="email" name="email" data-placeholder-tr="E-posta" data-placeholder-en="Email" placeholder="E-posta" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="tel" name="phone" data-placeholder-tr="Telefon" data-placeholder-en="Phone" placeholder="Telefon">
+                        </div>
+                        <div class="form-group">
+                            <input type="text" name="company" data-placeholder-tr="Şirket" data-placeholder-en="Company" placeholder="Şirket">
+                        </div>
+                        <div class="form-group">
+                            <textarea name="message" data-placeholder-tr="Mesajınız" data-placeholder-en="Your Message" placeholder="Mesajınız" rows="5" required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary" data-tr="Mesaj Gönder" data-en="Send Message">Mesaj Gönder</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="footer-brand">
+                        <img src="neksus2.png" alt="Neksus Logo" class="footer-logo">
+                        
+                    </div>
+                    <p data-tr="Endüstriyel otomasyon, robot programlama ve tasarım alanında profesyonel çözümler." data-en="Professional solutions in industrial automation, robot programming and design.">Endüstriyel otomasyon, robot programlama ve tasarım alanında profesyonel çözümler.</p>
+                </div>
+                <div class="footer-section">
+                    <h4 data-tr="Hizmetlerimiz" data-en="Our Services">Hizmetlerimiz</h4>
+                    <ul>
+                        <li><a href="#services" data-tr="Robotik Sistem Entegrasyonu" data-en="Robotic System Integration">Robotik Sistem Entegrasyonu</a></li>
+                        <li><a href="#services" data-tr="Endüstriyel Otomasyon" data-en="Industrial Automation">Endüstriyel Otomasyon</a></li>
+                        <li><a href="#services" data-tr="Yazılım Geliştirme" data-en="Software Development">Yazılım Geliştirme</a></li>
+                        <li><a href="#services" data-tr="Elektrik Pano Tasarım ve İmalat" data-en="Electrical Panel Design and Manufacturing">Elektrik Pano Tasarım ve İmalat</a></li>
+                        <li><a href="#services" data-tr="Endüstriyel Tasarım" data-en="Industrial Design">Endüstriyel Tasarım</a></li>
+                        <li><a href="#services" data-tr="İmalat ve Üretim" data-en="Manufacturing and Production">İmalat ve Üretim</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4 data-tr="Kurumsal" data-en="Corporate">Kurumsal</h4>
+                    <ul>
+                        <li><a href="#about" data-tr="Hakkımızda" data-en="About Us">Hakkımızda</a></li>
+                        <li><a href="#products" data-tr="Paket Ürünlerimiz" data-en="Our Package Products">Paket Ürünlerimiz</a></li>
+                        <li><a href="#references" data-tr="Referanslarımız" data-en="Our References">Referanslarımız</a></li>
+                        <li><a href="#contact" data-tr="İletişim" data-en="Contact">İletişim</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4 data-tr="İletişim" data-en="Contact">İletişim</h4>
+                    <p><i class="fas fa-envelope"></i> info@neksus.com.tr</p>
+                    <p><i class="fas fa-phone"></i> +90 506 614 97 69</p>
+                    <p><i class="fas fa-map-marker-alt"></i> 29 Ekim Mah. 10001 Sok. No:68/N<br>
+                    Naciye Şeker Toplu İşyeri Sanayi Sitesi<br>
+                    Ulukent-Menemen / İZMİR</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p data-tr="&copy; 2025 Neksus Endüstriyel Otomasyon. Tüm hakları saklıdır." data-en="&copy; 2025 Neksus Industrial Automation. All rights reserved.">&copy; 2025 Neksus Endüstriyel Otomasyon. Tüm hakları saklıdır.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
